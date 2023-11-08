@@ -1,27 +1,41 @@
 import logo from './logo.svg'
 import './App.css'
-import { createElement } from 'react'
+import { jsx as _jsx } from 'react/jsx-runtime'
+import { jsxs as _jsxs } from 'react/jsx-runtime'
 
 export const App = () => {
 	const currentYear = new Date().getFullYear() // декларативный
 
-	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-				<p>{currentYear}</p>
-			</header>
-		</div>
-	)
+	return _jsx('div', {
+		className: 'App',
+		children: _jsxs('header', {
+			className: 'App-header',
+			children: [
+				_jsx('img', {
+					src: logo,
+					className: 'App-logo',
+					alt: 'logo',
+				}),
+				_jsxs('p', {
+					children: [
+						'Edit ',
+						_jsx('code', {
+							children: 'src/App.js',
+						}),
+						' and save to reload.',
+					],
+				}),
+				_jsx('a', {
+					className: 'App-link',
+					href: 'https://reactjs.org',
+					target: '_blank',
+					rel: 'noopener noreferrer',
+					children: 'Learn React',
+				}),
+				_jsx('p', {
+					children: currentYear,
+				}),
+			],
+		}),
+	})
 }
